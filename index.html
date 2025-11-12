@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тихоходка — выставка моды</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta
+      name="description"
+      content="Тихоходка — выставочный показ одежды, аксессуаров и игрушек c переходом на Авито для покупки."
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <p class="hero__tagline">выставочный показ</p>
+        <div class="hero__title-box">
+          <h1 class="hero__title">Тихоходка</h1>
+          <p class="hero__subtitle">Магазин одежды и аксессуаров</p>
+          <p class="hero__subtitle hero__subtitle--sub">
+            Карточки представляют товары магазина «Тихоходка». Каждый предмет
+            сопровождается ссылкой на соответствующее объявление в Авито. Там вы
+            сможете связаться с нами и оформить покупку.
+          </p>
+        </div>
+        <nav class="hero__nav">
+          <button class="hero__nav-btn" data-filter="all">Все</button>
+          <button class="hero__nav-btn" data-filter="clothes">Одежда</button>
+          <button class="hero__nav-btn" data-filter="toys">Игрушки</button>
+          <button class="hero__nav-btn" data-filter="accessories">
+            Аксессуары
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--filters">
+        <div class="container filters">
+          <div class="filters__search">
+            <label for="searchInput">Поиск по сайту</label>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Например, платье, сумка, игрушка..."
+            />
+          </div>
+          <div class="filters__group">
+            <label for="categorySelect">Категория</label>
+            <select id="categorySelect">
+              <option value="all">Все категории</option>
+              <option value="clothes">Одежда</option>
+              <option value="toys">Игрушки</option>
+              <option value="accessories">Аксессуары</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <label for="sizeSelect">Размер</label>
+            <select id="sizeSelect">
+              <option value="all">Все размеры</option>
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="onesize">One Size</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <label for="colorSelect">Цвет</label>
+            <select id="colorSelect">
+              <option value="all">Все цвета</option>
+              <option value="лимонный">Лимонный</option>
+              <option value="болотный">Болотный</option>
+              <option value="оранжевый">Оранжевый</option>
+              <option value="фиолетовый">Фиолетовый</option>
+              <option value="пастельный">Пастельный</option>
+            </select>
+          </div>
+          <div class="filters__group filters__group--range">
+            <label>Цена (₽)</label>
+            <div class="filters__range-inputs">
+              <input
+                type="number"
+                id="priceMin"
+                placeholder="От"
+                min="0"
+                step="100"
+              />
+              <span>—</span>
+              <input
+                type="number"
+                id="priceMax"
+                placeholder="До"
+                min="0"
+                step="100"
+              />
+            </div>
+          </div>
+          <div class="filters__actions">
+            <button type="button" class="filters__apply" id="applyFilters">
+              ОК
+            </button>
+            <button type="button" class="filters__reset" id="resetFilters">
+              Сбросить
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--cards">
+        <div class="container cards-grid" id="productGrid">
+          <article
+            class="card"
+            data-category="clothes"
+            data-size="s"
+            data-color="лимонный"
+            data-price="4500"
+          >
+            <div class="card__image card__image--look1"></div>
+            <div class="card__body">
+              <h3 class="card__title">Летнее платье «Сияние»</h3>
+              <p class="card__category">Одежда</p>
+              <p class="card__description">
+                Лёгкая вискозная ткань, асимметричный крой, фирменный градиент
+                в оттенках заката.
+              </p>
+              <ul class="card__meta">
+                <li>Размер: S</li>
+                <li>Цвет: лимонный</li>
+              </ul>
+              <div class="card__footer">
+                <span class="card__price">4 500 ₽</span>
+                <a
+                  class="card__link"
+                  href="https://www.avito.ru/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Смотреть на Авито
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card"
+            data-category="clothes"
+            data-size="m"
+            data-color="болотный"
+            data-price="6900"
+          >
+            <div class="card__image card__image--look2"></div>
+            <div class="card__body">
+              <h3 class="card__title">Бомбер «Виолетта»</h3>
+              <p class="card__category">Одежда</p>
+              <p class="card__description">
+                Плотный атлас, контрастные вставки, карманы на молнии и
+                яркая подкладка.
+              </p>
+              <ul class="card__meta">
+                <li>Размер: M</li>
+                <li>Цвет: болотный</li>
+              </ul>
+              <div class="card__footer">
+                <span class="card__price">6 900 ₽</span>
+                <a
+                  class="card__link"
+                  href="https://www.avito.ru/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Смотреть на Авито
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card"
+            data-category="toys"
+            data-size="onesize"
+            data-color="оранжевый"
+            data-price="2100"
+          >
+            <div class="card__image card__image--toy1"></div>
+            <div class="card__body">
+              <h3 class="card__title">Плюшевый друг «Оранж»</h3>
+              <p class="card__category">Игрушки</p>
+              <p class="card__description">
+                Авторская игрушка ручной работы из гипоаллергенного велюра с
+                вышивкой.
+              </p>
+              <ul class="card__meta">
+                <li>Размер: one size</li>
+                <li>Цвет: оранжевый</li>
+              </ul>
+              <div class="card__footer">
+                <span class="card__price">2 100 ₽</span>
+                <a
+                  class="card__link"
+                  href="https://www.avito.ru/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Смотреть на Авито
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card"
+            data-category="accessories"
+            data-size="onesize"
+            data-color="болотный"
+            data-price="5200"
+          >
+            <div class="card__image card__image--bag1"></div>
+            <div class="card__body">
+              <h3 class="card__title">Сумка-мешок «Импульс»</h3>
+              <p class="card__category">Аксессуары</p>
+              <p class="card__description">
+                Натуральная кожа, жесткое дно, регулируемый ремень и магнитное
+                закрытие.
+              </p>
+              <ul class="card__meta">
+                <li>Размер: one size</li>
+                <li>Цвет: болотный</li>
+              </ul>
+              <div class="card__footer">
+                <span class="card__price">5 200 ₽</span>
+                <a
+                  class="card__link"
+                  href="https://www.avito.ru/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Смотреть на Авито
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card"
+            data-category="toys"
+            data-size="onesize"
+            data-color="пастельный"
+            data-price="1650"
+          >
+            <div class="card__image card__image--toy2"></div>
+            <div class="card__body">
+              <h3 class="card__title">Тактильный набор «Лови»</h3>
+              <p class="card__category">Игрушки</p>
+              <p class="card__description">
+                Развивающий комплект для малышей: тканевые элементы, фурнитура и
+                яркие текстуры.
+              </p>
+              <ul class="card__meta">
+                <li>Размер: one size</li>
+                <li>Цвет: пастельный</li>
+              </ul>
+              <div class="card__footer">
+                <span class="card__price">1 650 ₽</span>
+                <a
+                  class="card__link"
+                  href="https://www.avito.ru/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Смотреть на Авито
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card"
+            data-category="accessories"
+            data-size="l"
+            data-color="фиолетовый"
+            data-price="3400"
+          >
+            <div class="card__image card__image--scarf"></div>
+            <div class="card__body">
+              <h3 class="card__title">Шёлковый платок «Вспышка»</h3>
+              <p class="card__category">Аксессуары</p>
+              <p class="card__description">
+                Авторский принт, ручная обработка краёв и мягкая шелковая
+                ткань.
+              </p>
+              <ul class="card__meta">
+                <li>Размер: L (шарф)</li>
+                <li>Цвет: фиолетовый</li>
+              </ul>
+              <div class="card__footer">
+                <span class="card__price">3 400 ₽</span>
+                <a
+                  class="card__link"
+                  href="https://www.avito.ru/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Смотреть на Авито
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="container suggestion" id="suggestion" hidden>
+          <div class="suggestion__header">
+            <h3 class="suggestion__title" id="suggestionTitle">
+              Мы подобрали похожие варианты
+            </h3>
+            <p class="suggestion__subtitle">
+              Попробуйте эти позиции — они ближе всего к выбранным параметрам.
+            </p>
+          </div>
+          <div class="cards-grid suggestion__grid" id="suggestionList"></div>
+        </div>
+      </section>
+
+      <section class="section section--about">
+        <div class="container about-grid">
+          <div>
+            <h2>О шоуруме</h2>
+            <p>
+              «Тихоходка» — это магазин, где художники и дизайнеры
+              создают яркие и запоминающиеся образы. Мы не ограничиваемся
+              только одеждой: здесь же вы встретите коллекционные игрушки и
+              аксессуары, дополняющие стиль.
+            </p>
+          </div>
+          <div class="about__highlight">
+            <h3>Как купить</h3>
+            <ul>
+              <li>Выберите понравившийся предмет в каталоге.</li>
+              <li>Нажмите «Смотреть на Авито» и перейдите на объявление.</li>
+              <li>Свяжитесь с нами в Авито и оформите покупку.</li>
+            </ul>
+            <p class="about__note">
+              Персональная консультация доступна по запросу через сообщения
+              Авито.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <h2 class="footer__title">Тихоходка</h2>
+          <p>
+            Выставочный показ авторской одежды, игрушек и аксессуаров «Тихоходка».
+            Ограниченные тиражи, быстрый переход к покупке через Авито.
+          </p>
+        </div>
+        <div class="footer__contacts">
+          <h3>Контакты</h3>
+          <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+          <a href="mailto:hello@tihokhodka.ru">hello@tihokhodka.ru</a>
+          <p>Мы в соцсетях:</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram">Instagram*</a>
+            <a href="#" aria-label="VK">VK</a>
+          </div>
+          <p class="footer__disclaimer">
+            *Соцсеть Meta признана экстремистской на территории РФ.
+          </p>
+        </div>
+      </div>
+      <p class="footer__bottom">
+        © <span id="year"></span> «Тихоходка». Все права защищены.
+      </p>
+    </footer>
+
+    <script src="./main.js" defer></script>
+  </body>
+</html>
+
